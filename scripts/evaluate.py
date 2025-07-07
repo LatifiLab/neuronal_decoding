@@ -28,7 +28,6 @@ def main(config: DictConfig):
     # Print configuration for reference
     print(f"Configuration: \n{OmegaConf.to_yaml(config)}")
 
-    # Determine device
     device = torch.device(config.device if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
@@ -168,7 +167,7 @@ def main(config: DictConfig):
 
     # Generate neural activity plots for hybrid model
     if config.model.type == 'hybrid' and 'neural_activity' in predictions:
-        # Generate Figure 4 style visualization from the paper
+        # Generate Figure 4 visualization from the paper
         viz.plot_neural_activity_comparison(
             time_points=np.arange(len(targets['multiclass'])),
             true_neural=targets['neural_activity'],
