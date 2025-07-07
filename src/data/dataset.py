@@ -60,7 +60,6 @@ class NeuralDataset(Dataset):
         # Create sequences
         self._create_sequences()
 
-        # Print class distribution
         print("Class distribution:")
         for task in ['multiclass', 'contralateral', 'ipsilateral']:
             labels = getattr(self, f'y_{task}')
@@ -76,7 +75,7 @@ class NeuralDataset(Dataset):
         self.y_multiclass = []  # 3-class labels (0: no footstep, 1: contralateral, 2: ipsilateral)
         self.y_contralateral = []  # Binary labels for contralateral footstep
         self.y_ipsilateral = []  # Binary labels for ipsilateral footstep
-        self.y_neural = []  # Neural activity target for regularization
+        self.y_neural = []  # Neuronal activity target for regularization
         self.sequence_indices = []  # Indices for each sequence
 
         # Create sequences with proper consideration for behavioral state
@@ -96,7 +95,7 @@ class NeuralDataset(Dataset):
 
             # Extract neural activity for the prediction target (used in hybrid model)
             if self.pca is not None:
-                # Use first principal component as representative neural activity
+                # Use first principal component as representative neuronal activity
                 neural_activity = self.pca_features[i + self.sequence_length - 1, 0]
             else:
                 # Use mean activity across neurons when PCA not available
