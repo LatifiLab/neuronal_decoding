@@ -191,7 +191,7 @@ def create_data_loaders(dataset, batch_size, train_ratio=0.7, val_ratio=0.15, se
         shuffle=True,
         num_workers=4,
         pin_memory=True,
-        drop_last=True,  # Drop incomplete batches for more stable training
+        drop_last=True,  
     )
 
     val_loader = DataLoader(
