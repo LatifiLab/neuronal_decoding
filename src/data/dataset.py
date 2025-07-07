@@ -146,7 +146,6 @@ class NeuralDataset(Dataset):
 def create_data_loaders(dataset, batch_size, train_ratio=0.7, val_ratio=0.15, seed=42):
     """
     Create data loaders with appropriate batch sizes for each model type.
-    Ensures proper stratification to maintain class distribution.
     """
     # Set random seed
     torch.manual_seed(seed)
