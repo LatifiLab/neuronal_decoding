@@ -31,7 +31,7 @@ class NeuralDataset(Dataset):
         self.frame_indices = data.iloc[:, 0].values
         self.behavioral_labels = data.iloc[:, -1].values
 
-        # Extract neural data (columns between frame index and behavioral label)
+        # Extract neuronal data (columns between frame index and behavioral label)
         self.features = data.iloc[:, 1:-1].values
 
         # Store original features and neuron count
@@ -72,12 +72,12 @@ class NeuralDataset(Dataset):
         Create optimized sequences for all classification tasks with proper overlap.
         """
         # Initialize lists
-        self.X = []  # Neural activity sequences
+        self.X = []  # Neuronal activity sequences
         self.y_multiclass = []  # 3-class labels (0: no footstep, 1: contralateral, 2: ipsilateral)
         self.y_contralateral = []  # Binary labels for contralateral footstep
         self.y_ipsilateral = []  # Binary labels for ipsilateral footstep
         self.y_neural = []  # Neural activity target for regularization
-        self.sequence_indices = []  # Indices for each sequence (for debugging)
+        self.sequence_indices = []  # Indices for each sequence
 
         # Create sequences with proper consideration for behavioral state
         valid_count = 0
