@@ -17,8 +17,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
     plt.figure(figsize=(10, 8))
 
     if include_percentages:
-        # Calculate percentages by row (true class) - normalizes each row to sum to 100%
-        # This shows what percentage of each true class was predicted as each class
+        # Calculate percentages by row (true class) - normalizes each row 
         cm_perc = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis] * 100
 
         # Handle potential division by zero (creates NaN values) by replacing with 0
