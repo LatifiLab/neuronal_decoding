@@ -88,7 +88,7 @@ def calculate_roc_curve_data(true_labels, predicted_probs, num_classes=None):
         fpr[0], tpr[0], _ = roc_curve(true_labels, probs)
         roc_auc[0] = auc(fpr[0], tpr[0])
     else:
-        # Multiclass classification (one-vs-rest)
+        # Multiclass classification
         for i in range(num_classes):
             # Convert to binary problem
             true_binary = (true_labels == i).astype(int)
