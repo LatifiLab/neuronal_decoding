@@ -43,14 +43,6 @@ def calculate_metrics(true_labels, predicted_labels, task='multiclass'):
 def calculate_confusion_matrix(true_labels, predicted_labels, normalize=None):
     """
     Calculate confusion matrix with optional normalization.
-
-    Args:
-        true_labels: Ground truth labels
-        predicted_labels: Predicted labels
-        normalize: Normalization method ('true', 'pred', 'all', or None)
-
-    Returns:
-        Confusion matrix as numpy array
     """
     # Calculate confusion matrix
     cm = confusion_matrix(true_labels, predicted_labels)
