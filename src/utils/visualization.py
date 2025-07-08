@@ -28,7 +28,6 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
             for j in range(cm.shape[1]):
                 annot[i, j] = f"{cm_perc[i, j]:.1f}%\n({cm[i, j]})"
 
-        # Use percentage matrix for color scaling 
         # represent the proportion of predictions rather than absolute counts
         heatmap_data = cm_perc
 
