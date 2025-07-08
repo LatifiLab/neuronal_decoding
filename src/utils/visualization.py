@@ -100,7 +100,6 @@ def plot_roc_curves(true_labels, predicted_probs, class_names, title='ROC Curves
         plt.plot(fpr, tpr, lw=2, label=f'{class_names[1]} (AUC = {roc_auc:.2f})')
     else:
         # Multi-class classification
-        # One-vs-rest approach
         true_labels_one_hot = np.eye(n_classes)[true_labels]
 
         for i, class_name in enumerate(class_names):
