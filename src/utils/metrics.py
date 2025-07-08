@@ -65,14 +65,6 @@ def calculate_confusion_matrix(true_labels, predicted_labels, normalize=None):
 def calculate_roc_curve_data(true_labels, predicted_probs, num_classes=None):
     """
     Calculate ROC curve data for binary or multiclass problems.
-
-    Args:
-        true_labels: Ground truth labels
-        predicted_probs: Predicted probabilities
-        num_classes: Number of classes for multiclass problems
-
-    Returns:
-        Dictionary with FPR, TPR, and AUC for each class
     """
     # Determine number of classes
     if num_classes is None:
