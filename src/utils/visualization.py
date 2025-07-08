@@ -14,10 +14,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
     # Calculate confusion matrix - this gives us the raw counts
     cm = confusion_matrix(true_labels, predicted_labels)
 
-    # Create figure with specific size for optimal appearance
     plt.figure(figsize=(10, 8))
 
-    # Define annotation format and data for heatmap
     if include_percentages:
         # Calculate percentages by row (true class) - normalizes each row to sum to 100%
         # This shows what percentage of each true class was predicted as each class
