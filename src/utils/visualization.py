@@ -31,7 +31,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
             for j in range(cm.shape[1]):
                 annot[i, j] = f"{cm_perc[i, j]:.1f}%\n({cm[i, j]})"
 
-        # Use percentage matrix for color scaling - this makes the color intensity
+        # Use percentage matrix for color scaling 
         # represent the proportion of predictions rather than absolute counts
         heatmap_data = cm_perc
 
@@ -61,7 +61,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         square=True  
     )
 
-    # Customize plot appearance to match your professional style
+    # Customize plot appearance
     ax.set_xlabel('Predicted Label', fontsize=14, fontweight='bold', labelpad=10)
     ax.set_ylabel('True Label', fontsize=14, fontweight='bold', labelpad=10)
     ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
@@ -70,14 +70,11 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
     ax.tick_params(axis='x', labelsize=12, rotation=0)  
     ax.tick_params(axis='y', labelsize=12, rotation=0)  
 
-    # Ensure tick labels are properly positioned
     plt.xticks(rotation=0, ha='center')
     plt.yticks(rotation=0, va='center')
 
-    # Adjust layout to prevent any label cutoff and ensure clean appearance
     plt.tight_layout()
 
-    # Save figure if path provided, using high DPI for crisp output
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight', facecolor='white')
         print(f"Saved confusion matrix to {save_path}")
