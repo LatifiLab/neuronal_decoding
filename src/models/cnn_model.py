@@ -75,7 +75,6 @@ class CNNOnlyModel(nn.Module):
         # Initialize weights
         self._initialize_weights()
 
-        # Print architecture summary
         total_params = sum(p.numel() for p in self.parameters())
         print(f"Pure CNN model: {total_params:,} parameters")
 
