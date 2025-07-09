@@ -91,18 +91,18 @@ class MultiHeadTemporalAttention(nn.Module):
 
 class LSTMAttentionModel(nn.Module):
     """
-    LSTM+Attention model designed to bridge the performance gap between basic LSTM and hybrid models.
+    LSTM+Attention model designed to bridge the performance gap between LSTM and hybrid models.
     """
 
     def __init__(
             self,
             input_size,
-            hidden_size=96,  # Increased from basic LSTM (64) but less than hybrid (128)
+            hidden_size=96, 
             num_layers=2,
             num_classes=3,
-            dropout=0.4,  # Balanced dropout
-            num_attention_heads=4,  # Multi-head attention
-            attention_dim=48  # Attention dimension
+            dropout=0.4,  
+            num_attention_heads=4, 
+            attention_dim=48  
     ):
         super(LSTMAttentionModel, self).__init__()
 
