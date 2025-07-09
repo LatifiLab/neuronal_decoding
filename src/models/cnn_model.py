@@ -20,7 +20,7 @@ class CNNOnlyModel(nn.Module):
             self,
             input_size,  # Number of neurons
             num_classes=3,
-            dropout=0.3  # Lower dropout for simpler model
+            dropout=0.3  
     ):
         super(CNNOnlyModel, self).__init__()
 
@@ -29,7 +29,7 @@ class CNNOnlyModel(nn.Module):
 
         print(f"Initializing Pure CNN-only model (no attention) with {input_size} neurons")
 
-        # Simple temporal CNN architecture
+        # temporal CNN architecture
         # Layer 1: Detect immediate neural responses
         self.conv1 = nn.Conv1d(input_size, 64, kernel_size=3, padding=1)
         self.bn1 = nn.BatchNorm1d(64)
