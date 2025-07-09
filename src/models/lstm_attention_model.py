@@ -133,16 +133,16 @@ class LSTMAttentionModel(nn.Module):
         self.dropout1 = nn.Dropout(dropout * 0.8) 
 
         # Second FC layer
-        self.fc2 = nn.Linear(80, 56)  # Intermediate layer
+        self.fc2 = nn.Linear(80, 56)  
         self.bn2 = nn.BatchNorm1d(56)
         self.relu2 = nn.ReLU()
-        self.dropout2 = nn.Dropout(dropout * 0.6)  # Progressive dropout reduction
+        self.dropout2 = nn.Dropout(dropout * 0.6)  
 
         # Third FC layer for more representation power
         self.fc3 = nn.Linear(56, 40)
         self.bn3 = nn.BatchNorm1d(40)
         self.relu3 = nn.ReLU()
-        self.dropout3 = nn.Dropout(dropout * 0.4)  # Minimal dropout in deeper layers
+        self.dropout3 = nn.Dropout(dropout * 0.4)  
 
         # Task-specific output heads
         # Using more sophisticated heads than basic LSTM
