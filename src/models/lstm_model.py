@@ -6,7 +6,7 @@ import torch.nn as nn
 
 class LSTMModel(nn.Module):
     """
-    LSTM model for neural decoding with fully connected layers as specified in Table 1.
+    LSTM model for neuronal decoding with fully connected layers as specified in Table 1.
     Implements the first model approach described in the paper.
     """
 
@@ -47,8 +47,8 @@ class LSTMModel(nn.Module):
 
         # Task-specific output heads for multi-task learning
         self.multiclass_head = nn.Linear(32, num_classes)
-        self.contralateral_head = nn.Linear(32, 2)  # Binary classification
-        self.ipsilateral_head = nn.Linear(32, 2)  # Binary classification
+        self.contralateral_head = nn.Linear(32, 2)  
+        self.ipsilateral_head = nn.Linear(32, 2)  
 
         # Initialize weights using methods specified in Table 1
         self._initialize_weights()
