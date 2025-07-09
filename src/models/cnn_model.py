@@ -55,7 +55,7 @@ class CNNOnlyModel(nn.Module):
         self.global_max_pool = nn.AdaptiveMaxPool1d(1)
 
         # Combine avg and max pooling
-        combined_features = 256 * 2  # avg + max
+        combined_features = 256 * 2  
 
         # Classifier head
         self.feature_reducer = nn.Sequential(
