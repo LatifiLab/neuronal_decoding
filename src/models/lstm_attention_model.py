@@ -207,11 +207,9 @@ class LSTMAttentionModel(nn.Module):
         lstm_out, _ = self.lstm(x, (h0, c0))  # [batch_size, seq_len, hidden_size]
 
         # Apply multi-head temporal attention
-        # This is the key enhancement over basic LSTM
         attended_features = self.attention(lstm_out)  # [batch_size, hidden_size]
 
         # Enhanced fully connected processing
-        # More sophisticated feature transformation than basic LSTM
         out = self.relu1(self.bn1(self.fc1(attended_features)))
         out = self.dropout1(out)
 
