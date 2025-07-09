@@ -7,7 +7,7 @@ import math
 
 class MultiHeadTemporalAttention(nn.Module):
     """
-    Multi-head temporal attention mechanism designed specifically for sequential neural data.
+    Multi-head temporal attention mechanism designed specifically for sequential neuronal data.
     """
 
     def __init__(self, hidden_size, num_heads=4, attention_dim=48):
@@ -21,7 +21,6 @@ class MultiHeadTemporalAttention(nn.Module):
         assert attention_dim % num_heads == 0, "attention_dim must be divisible by num_heads"
 
         # Multi-head attention components
-        # Using smaller dimensions than the full hybrid model for computational efficiency
         self.query = nn.Linear(hidden_size, attention_dim, bias=False)
         self.key = nn.Linear(hidden_size, attention_dim, bias=False)
         self.value = nn.Linear(hidden_size, attention_dim, bias=False)
@@ -29,7 +28,7 @@ class MultiHeadTemporalAttention(nn.Module):
 
         # Normalization and regularization
         self.layer_norm = nn.LayerNorm(hidden_size)
-        self.dropout = nn.Dropout(0.1)  # Light dropout in attention
+        self.dropout = nn.Dropout(0.1)  
 
         # Scaling factor for attention scores
         self.scale = math.sqrt(self.head_dim)
