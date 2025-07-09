@@ -121,9 +121,8 @@ class CNNOnlyModel(nn.Module):
         x4 = self.dropout(x4)
 
         # Global pooling to compress temporal dimension
-        # This is critical: CNN must reduce sequence to single vector
-        avg_pooled = self.global_avg_pool(x4).squeeze(-1)  # [batch, 256]
-        max_pooled = self.global_max_pool(x4).squeeze(-1)  # [batch, 256]
+        avg_pooled = self.global_avg_pool(x4).squeeze(-1)  
+        max_pooled = self.global_max_pool(x4).squeeze(-1)  
 
         # Combine pooled features
         combined = torch.cat([avg_pooled, max_pooled], dim=1)  # [batch, 512]
