@@ -127,10 +127,10 @@ class LSTMAttentionModel(nn.Module):
         )
 
         # First FC layer with batch normalization
-        self.fc1 = nn.Linear(hidden_size, 80)  # Bigger than basic LSTM
+        self.fc1 = nn.Linear(hidden_size, 80) 
         self.bn1 = nn.BatchNorm1d(80)
         self.relu1 = nn.ReLU()
-        self.dropout1 = nn.Dropout(dropout * 0.8)  # Slightly less dropout in early layers
+        self.dropout1 = nn.Dropout(dropout * 0.8) 
 
         # Second FC layer
         self.fc2 = nn.Linear(80, 56)  # Intermediate layer
