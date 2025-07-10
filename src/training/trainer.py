@@ -408,7 +408,7 @@ class Trainer:
         if self.model_type == 'lstm':
             self.scheduler.step(val_loss)
         elif self.model_type == 'hybrid':
-            self.scheduler.step()  # OneCycleLR steps automatically
+            self.scheduler.step() 
         elif self.model_type in ['cnn', 'lstm_attention']:
             # Skip warmup epochs for cosine annealing
             if not (hasattr(self, 'warmup_epochs') and epoch < self.warmup_epochs):
@@ -433,7 +433,7 @@ class Trainer:
             inputs = inputs.to(self.device)
             targets_dict = {k: v.to(self.device) for k, v in targets_dict.items()}
 
-            # Apply mixup data augmentation if enabled (only for more advanced models)
+            # Apply mixup data augmentation if enabled 
             if (hasattr(self.config.training, 'use_mixup') and
                     self.config.training.use_mixup and
                     self.model_type in ['hybrid']):  # Only hybrid uses mixup
