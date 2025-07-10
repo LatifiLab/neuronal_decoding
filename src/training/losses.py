@@ -80,8 +80,6 @@ class MultitaskLoss(nn.Module):
     def forward(self, outputs, targets):
         """
         Forward pass calculating the combined loss as in equation (19).
-
-        Supports mixup augmentation by handling mixed targets.
         """
         losses = {}
         total_loss = 0.0
