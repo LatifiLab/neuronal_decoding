@@ -12,8 +12,8 @@ class FocalLoss(nn.Module):
 
     def __init__(self, alpha=2.0, gamma=2.0, reduction='mean', class_weights=None):
         super(FocalLoss, self).__init__()
-        self.alpha = alpha  # Set to 2.0 as specified in the paper
-        self.gamma = gamma  # Set to 2.0 as specified in the paper
+        self.alpha = alpha  
+        self.gamma = gamma  
         self.reduction = reduction
         self.class_weights = class_weights
 
