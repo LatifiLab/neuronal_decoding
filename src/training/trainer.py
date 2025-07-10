@@ -61,8 +61,7 @@ class Trainer:
         else:
             self.class_weights = None
 
-        # Initialize loss function with task weights from model config
-        # This ensures fair comparison across different model architectures
+        # Initialize loss function with task weights from model config        
         task_weights = getattr(config.model, 'task_weights', None)
         self.criterion = MultitaskLoss(
             task_weights=task_weights,
@@ -73,7 +72,7 @@ class Trainer:
         # Different architectures benefit from different optimization strategies
         self._initialize_optimizer_and_scheduler()
 
-        # Set early stopping with model-appropriate patience
+        # Set early stopping 
         patience = getattr(config.training, 'early_stopping_patience', 7)
         self.early_stopping = EarlyStopping(
             patience=patience,
