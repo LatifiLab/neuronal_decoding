@@ -31,13 +31,6 @@ class EarlyStopping:
     def __call__(self, score, model=None):
         """
         Check if training should stop and save best model if provided.
-
-        Args:
-            score: Current validation score
-            model: Model to save (optional)
-
-        Returns:
-            bool: Whether to stop training
         """
         if self.best_score is None:
             # First epoch
