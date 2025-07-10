@@ -240,12 +240,11 @@ class Trainer:
     def _calculate_class_weights(self, dataloader):
         """
         Calculate inverse frequency class weights to handle class imbalance.
-        This ensures fair comparison across all model types.
         """
         try:
             # Count classes across a subset of batches for efficiency
             class_counts = defaultdict(int)
-            max_batches = min(len(dataloader), 20)  # Use at most 20 batches
+            max_batches = min(len(dataloader), 20)  
 
             print("Calculating class weights from training data...")
             for i, (_, targets_dict) in enumerate(dataloader):
