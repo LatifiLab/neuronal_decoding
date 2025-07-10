@@ -7,7 +7,7 @@ import torch.nn.functional as F
 
 class FocalLoss(nn.Module):
     """
-    Focal Loss implementation as in equation (20) of the paper with α=2.0, γ=2.0.
+    Focal Loss implementation as in equation (20) of the paper.
     """
 
     def __init__(self, alpha=2.0, gamma=2.0, reduction='mean', class_weights=None):
