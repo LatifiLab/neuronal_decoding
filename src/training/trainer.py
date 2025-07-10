@@ -572,7 +572,7 @@ class Trainer:
 
         all_targets = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
 
-        # Check if neural activity prediction is available (only for hybrid model)
+        # Check if neuronal activity prediction is available (only for hybrid model)
         sample_batch = next(iter(self.test_loader))
         if 'neural_activity' in sample_batch[1] and self.model_type == 'hybrid':
             all_predictions['neural_activity'] = []
@@ -607,7 +607,7 @@ class Trainer:
                         all_predictions[f'{task}_probs'].append(probs.cpu().numpy())
                         all_targets[task].append(targets_dict[task].cpu().numpy())
 
-                # Store neural activity predictions if available (hybrid model only)
+                # Store neuronal activity predictions if available (hybrid model only)
                 if ('neural_activity' in outputs_dict and
                         'neural_activity' in targets_dict and
                         self.model_type == 'hybrid'):
@@ -715,7 +715,7 @@ class Trainer:
                     save_path=os.path.join(viz_dir, f'{task}_roc_curves.png')
                 )
 
-        # Generate neural activity visualization for hybrid model only
+        # Generate neuronal activity visualization for hybrid model only
         if self.model_type == 'hybrid' and 'neural_activity' in predictions:
             viz.plot_neural_activity_comparison(
                 time_points=np.arange(len(targets['multiclass'])),
