@@ -12,12 +12,6 @@ class EarlyStopping:
     def __init__(self, patience=7, min_delta=0.0001, mode='min', verbose=True):
         """
         Initialize early stopping.
-
-        Args:
-            patience: Number of epochs without improvement before stopping
-            min_delta: Minimum change in monitored value to qualify as improvement
-            mode: 'min' (monitor is decreasing) or 'max' (monitor is increasing)
-            verbose: Whether to print early stopping messages
         """
         self.patience = patience
         self.min_delta = min_delta
