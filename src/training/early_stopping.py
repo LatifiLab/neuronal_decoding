@@ -62,9 +62,6 @@ class EarlyStopping:
     def load_best_model(self, model):
         """
         Load the best model state dict into the provided model.
-
-        Args:
-            model: Model to load the best state dict into
         """
         if self.best_state_dict is not None:
             model.load_state_dict(self.best_state_dict)
