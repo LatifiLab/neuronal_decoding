@@ -63,7 +63,7 @@ class MultitaskLoss(nn.Module):
             'multiclass': 1.0,
             'contralateral': 0.5,
             'ipsilateral': 0.5,
-            'neural_activity': 1.0  # Set to 1.0 as in Table 2
+            'neural_activity': 1.0  
         }
 
         # Class weights for handling imbalance
@@ -105,7 +105,7 @@ class MultitaskLoss(nn.Module):
                     else:
                         target = target.view(batch_size, -1)
 
-                    # Apply MSE loss for neural activity
+                    # Apply MSE loss for neuronal activity
                     losses[task_name] = self.mse_loss(output, target)
                 else:
                     # Check for mixup-related data
