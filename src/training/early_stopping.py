@@ -7,8 +7,6 @@ import torch
 class EarlyStopping:
     """
     Early stopping to prevent overfitting.
-
-    As mentioned in the paper, early stopping was used with patience 7.
     """
 
     def __init__(self, patience=7, min_delta=0.0001, mode='min', verbose=True):
