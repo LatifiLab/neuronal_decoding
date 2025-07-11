@@ -78,7 +78,7 @@ class NeuralDataset(Dataset):
         self.y_neural = []  # Neuronal activity target for regularization
         self.sequence_indices = []  # Indices for each sequence
 
-        # Create sequences with proper consideration for behavioral state
+        # Create sequences for behavioral state
         valid_count = 0
         for i in range(len(self.features) - self.sequence_length + 1):
             # Extract sequence
