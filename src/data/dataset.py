@@ -10,7 +10,7 @@ from sklearn.decomposition import PCA
 
 class NeuralDataset(Dataset):
     """
-    Dataset for neural activity data with optimized sequence handling for different models.
+    Dataset for neuronal activity data with optimized sequence handling for different models.
     """
 
     def __init__(
