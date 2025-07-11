@@ -140,7 +140,7 @@ class DynamicNormalization(nn.Module):
 class HybridCNNBiLSTM(nn.Module):
     """
     Hybrid CNN-BiLSTM model as described in the paper with attention mechanism.
-    Integrates spatial and temporal processing for improved neural decoding.
+    Integrates spatial and temporal processing for improved neuronal decoding.
     """
 
     def __init__(
