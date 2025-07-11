@@ -93,7 +93,7 @@ class NeuralDataset(Dataset):
             contralateral_label = 1 if behavioral_label == 1 else 0
             ipsilateral_label = 1 if behavioral_label == 2 else 0
 
-            # Extract neural activity for the prediction target (used in hybrid model)
+            # Extract neuronal activity for the prediction target (used in hybrid model)
             if self.pca is not None:
                 # Use first principal component as representative neuronal activity
                 neural_activity = self.pca_features[i + self.sequence_length - 1, 0]
