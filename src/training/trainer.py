@@ -102,8 +102,7 @@ class Trainer:
         - Hybrid: AdamW with one-cycle scheduling
         """
         if self.model_type == 'cnn':
-            # Simple optimization for CNN-only model
-            # Using basic Adam with step decay for intentionally limited performance
+            # optimization for CNN-only model
             self.optimizer = torch.optim.Adam(
                 self.model.parameters(),
                 lr=self.config.training.learning_rate,
