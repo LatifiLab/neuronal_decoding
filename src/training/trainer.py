@@ -130,11 +130,11 @@ class Trainer:
             self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
                 self.optimizer,
                 mode='min',
-                factor=0.5,  # Reduce by half when plateauing
-                patience=5,  # Wait 5 epochs before reducing
+                factor=0.5,  
+                patience=5, 
                 verbose=True
             )
-            self.warmup_epochs = 0  # No warmup for basic LSTM
+            self.warmup_epochs = 0 
 
         elif self.model_type == 'lstm_attention':
             # Adam optimizer for LSTM+attention model with improved parameters
