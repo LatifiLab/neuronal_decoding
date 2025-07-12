@@ -142,7 +142,7 @@ class Trainer:
                 self.model.parameters(),
                 lr=self.config.training.learning_rate,
                 weight_decay=self.config.training.weight_decay,
-                betas=(0.9, 0.999),  # Standard Adam betas
+                betas=(0.9, 0.999),  
                 eps=1e-8
             )
 
@@ -189,12 +189,12 @@ class Trainer:
                 self.optimizer,
                 max_lr=self.config.training.learning_rate,
                 total_steps=total_steps,
-                pct_start=0.3,  # Warmup period is 30% of total training as mentioned
-                div_factor=25,  # Initial learning rate is max_lr/25
-                final_div_factor=10000,  # Final learning rate is max_lr/10000
-                anneal_strategy='cos'  # Cosine annealing as per the paper
+                pct_start=0.3,  
+                div_factor=25,  
+                final_div_factor=10000, 
+                anneal_strategy='cos'  
             )
-            self.warmup_epochs = 0  # OneCycleLR handles its own warmup
+            self.warmup_epochs = 0  
 
     def _initialize_wandb(self):
         """Initialize Weights & Biases logging if available and configured."""
