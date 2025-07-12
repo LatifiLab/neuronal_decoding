@@ -96,7 +96,7 @@ class Trainer:
         Initialize optimizer and learning rate scheduler based on model type.
 
         Each model architecture has different optimization requirements:
-        - CNN: Simple Adam with step decay
+        - CNN: Adam with step decay
         - LSTM: Adam with plateau-based scheduling
         - LSTM+Attention: Adam with cosine annealing and warmup
         - Hybrid: AdamW with one-cycle scheduling
@@ -109,7 +109,7 @@ class Trainer:
                 weight_decay=self.config.training.weight_decay
             )
 
-            # Step scheduler for CNN - simple and effective
+            # Step scheduler for CNN 
             self.scheduler = torch.optim.lr_scheduler.StepLR(
                 self.optimizer,
                 step_size=getattr(self.config.training, 'step_size', 40),
