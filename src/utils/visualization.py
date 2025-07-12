@@ -31,7 +31,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         # represent the proportion of predictions rather than absolute counts
         heatmap_data = cm_perc
 
-        # Set color scale limits for consistent appearance
+        # Set color scale limits 
         vmin, vmax = 0, 100
         colorbar_label = 'Percentage (%)'
 
