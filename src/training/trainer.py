@@ -69,7 +69,6 @@ class Trainer:
         )
 
         # Initialize optimizer and scheduler based on model type
-        # Different architectures benefit from different optimization strategies
         self._initialize_optimizer_and_scheduler()
 
         # Set early stopping 
@@ -435,7 +434,7 @@ class Trainer:
             # Apply mixup data augmentation if enabled 
             if (hasattr(self.config.training, 'use_mixup') and
                     self.config.training.use_mixup and
-                    self.model_type in ['hybrid']):  # Only hybrid uses mixup
+                    self.model_type in ['hybrid']):  
                 inputs, targets_dict = self._mixup_batch(inputs, targets_dict)
 
             # Zero gradients
