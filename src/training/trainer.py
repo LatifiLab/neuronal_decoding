@@ -116,7 +116,7 @@ class Trainer:
                 gamma=getattr(self.config.training, 'gamma', 0.8),
                 verbose=True
             )
-            self.warmup_epochs = 0  # No warmup for CNN
+            self.warmup_epochs = 0 
 
         elif self.model_type == 'lstm':
             # Adam optimizer for LSTM as specified in Table 1
