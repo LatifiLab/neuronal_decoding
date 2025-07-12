@@ -88,7 +88,7 @@ class Trainer:
         checkpoint_dir = os.path.join(config.paths.checkpoints_dir, model_type)
         os.makedirs(checkpoint_dir, exist_ok=True)
 
-        # Initialize WandB if available and configured
+        # Initialize WandB if available 
         self._initialize_wandb()
 
     def _initialize_optimizer_and_scheduler(self):
