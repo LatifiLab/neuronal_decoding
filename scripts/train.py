@@ -58,7 +58,7 @@ def main(config: DictConfig):
 
     # Determine sequence length based on model architecture
     if config.model.type == 'lstm':
-        # Basic LSTM uses shorter sequences as specified in the paper
+        # LSTM uses shorter sequences as specified in the paper
         sequence_length = 10
         print("LSTM model: Using short sequences for basic temporal patterns")
     elif config.model.type == 'cnn':
@@ -120,7 +120,7 @@ def main(config: DictConfig):
     print(f"\nCreating {config.model.type} model...")
 
     if config.model.type == 'lstm':
-        # Basic LSTM model as described in the paper's first approach
+        #  LSTM model 
         model = LSTMModel(
             input_size=config.model.input_size,
             hidden_size=config.model.hidden_size,
