@@ -12,11 +12,10 @@ from omegaconf import DictConfig, OmegaConf
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.insert(0, project_root)
 
-# Import all model types - this is crucial for supporting the full model suite
 from src.models.lstm_model import LSTMModel
 from src.models.hybrid_model import HybridCNNBiLSTM
 from src.models.cnn_model import CNNOnlyModel
-from src.models.lstm_attention_model import LSTMAttentionModel  # This was missing!
+from src.models.lstm_attention_model import LSTMAttentionModel 
 from src.data.dataset import NeuralDataset, create_data_loaders
 from src.training.trainer import Trainer
 
