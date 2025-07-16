@@ -35,7 +35,6 @@ def main(config: DictConfig):
     print(f"Configuration: \n{OmegaConf.to_yaml(config)}")
 
     # Set random seeds for reproducibility across all libraries
-    # This ensures consistent results across different runs
     random.seed(config.seed)
     np.random.seed(config.seed)
     torch.manual_seed(config.seed)
