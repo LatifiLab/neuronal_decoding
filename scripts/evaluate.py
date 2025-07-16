@@ -21,9 +21,6 @@ import src.utils.visualization as viz
 def main(config: DictConfig):
     """
     Main evaluation function.
-
-    Evaluates a trained LSTM or Hybrid CNN-BiLSTM model on the test set.
-    Generates comprehensive visualizations and metrics.
     """
     # Print configuration for reference
     print(f"Configuration: \n{OmegaConf.to_yaml(config)}")
