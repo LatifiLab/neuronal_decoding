@@ -143,7 +143,6 @@ def create_data_loaders(dataset, batch_size, train_ratio=0.7, val_ratio=0.15, se
     """
     Create data loaders with appropriate batch sizes for each model type.
     """
-    # Set random seed
     torch.manual_seed(seed)
     np.random.seed(seed)
 
