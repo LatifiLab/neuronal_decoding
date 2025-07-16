@@ -25,7 +25,7 @@ def main(config: DictConfig):
     """
     Main training function supporting all model architectures.
 
-    This function orchestrates the complete training pipeline for neuronal decoding models.
+    For the complete training pipeline for neuronal decoding models.
     1. CNN: Captures spatial patterns in neuronal populations
     2. LSTM: Models temporal dynamics in neuronal sequences
     3. LSTM+Attention: Enhances temporal modeling with attention mechanisms
