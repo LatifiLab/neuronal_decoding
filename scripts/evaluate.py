@@ -114,7 +114,6 @@ def main(config: DictConfig):
     print("\nEvaluating model on test set...")
     loss, metrics, predictions, targets = trainer.evaluate()
 
-    # Print summary of results
     print("\nEvaluation Results Summary:")
     print(f"Loss: {loss:.4f}")
 
