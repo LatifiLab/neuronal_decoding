@@ -99,7 +99,7 @@ def main(config: DictConfig):
         print("Please train the model first.")
         return
 
-    # Create trainer for evaluation only
+    # Create trainer for evaluation
     trainer = Trainer(
         model=model,
         model_type=config.model.type,
@@ -161,9 +161,8 @@ def main(config: DictConfig):
                 save_path=os.path.join(visualization_dir, f'{task}_roc_curves.png')
             )
 
-    # Generate neural activity plots for hybrid model
+    # Generate neuronal activity plots for hybrid model
     if config.model.type == 'hybrid' and 'neural_activity' in predictions:
-        # Generate Figure 4 visualization from the paper
         viz.plot_neural_activity_comparison(
             time_points=np.arange(len(targets['multiclass'])),
             true_neural=targets['neural_activity'],
