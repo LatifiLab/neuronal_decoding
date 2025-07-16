@@ -7,7 +7,6 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
-
 class NeuralDataset(Dataset):
     """
     Dataset for neuronal activity data with optimized sequence handling for different models.
@@ -16,7 +15,7 @@ class NeuralDataset(Dataset):
     def __init__(
             self,
             data_path,
-            sequence_length=32,  # Default for hybrid model
+            sequence_length=32, 
             apply_pca=True,
             n_components=3,
             normalize=True
