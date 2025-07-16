@@ -172,9 +172,6 @@ def main(config: DictConfig):
             save_path=os.path.join(visualization_dir, 'neural_activity_figure4.png')
         )
 
-    print(f"\nEvaluation completed. Results and visualizations saved to {visualization_dir}")
-
-
 if __name__ == "__main__":
     main()
 
