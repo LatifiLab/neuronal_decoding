@@ -46,7 +46,6 @@ class CNNOnlyModel(nn.Module):
         self.dropout = nn.Dropout(dropout)
 
         # Global pooling to aggregate temporal information
-        # This is the CNN's way of reducing sequence to single prediction
         self.global_avg_pool = nn.AdaptiveAvgPool1d(1)
         self.global_max_pool = nn.AdaptiveMaxPool1d(1)
 
