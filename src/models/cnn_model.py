@@ -10,10 +10,6 @@ class CNNOnlyModel(nn.Module):
     CNN-only model for neuronal decoding - NO attention mechanisms.
 
     This model serves as a baseline to test spatial feature extraction alone.
-
-    Key design principles:
-    1. ONLY convolutional layers for feature extraction
-    2. NO attention mechanisms
     """
 
     def __init__(
