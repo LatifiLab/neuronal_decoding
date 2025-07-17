@@ -197,7 +197,7 @@ class HybridCNNBiLSTM(nn.Module):
             )
 
         # Common features before task-specific heads
-        bilstm_out_dim = hidden_size * 2  # *2 for bidirectional
+        bilstm_out_dim = hidden_size * 2  
 
         # Task-specific heads with layer normalization (5)
         # 1. Multiclass classification head (no footstep, contralateral, ipsilateral)
@@ -227,7 +227,7 @@ class HybridCNNBiLSTM(nn.Module):
             nn.Linear(hidden_size, 2)
         )
 
-        # 4. Neural activity prediction head for regularization
+        # 4. Neuronal activity prediction head for regularization
         self.neural_head = nn.Sequential(
             nn.Linear(bilstm_out_dim, hidden_size),
             nn.LayerNorm(hidden_size),
