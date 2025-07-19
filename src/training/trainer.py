@@ -290,7 +290,7 @@ class Trainer:
         trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
         print(f"Model parameters: {total_params:,} total, {trainable_params:,} trainable")
 
-        # Track best model and training history
+        # Track best model and training 
         best_val_loss = float('inf')
         best_epoch = 0
         train_history = defaultdict(list)
