@@ -22,7 +22,7 @@ class Trainer:
     """
     trainer for comprehensive neuronal decoding ablation study.
 
-    Supported Models:
+    Models:
     - CNN: Spatial-only processing without temporal dynamics
     - LSTM: Basic temporal processing with recurrent connections
     - LSTM+Attention: Enhanced temporal processing with attention mechanisms
